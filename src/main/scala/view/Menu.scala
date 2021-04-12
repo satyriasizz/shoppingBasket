@@ -31,7 +31,9 @@ class Menu(aBasket: Basket, offersList: List[Offer]) {
         case e: Exception =>
           println(wrongMenuMsg)
       }
-      if (id == 0) {
+      if(id < 0 || id > exitID)
+        println(wrongMenuMsg)
+      else if (id == 0) {
         val itemsSubtotal = basket.getItemsSubtotal
         println("Subtotal: " + PricePrinter.formatPrice(itemsSubtotal))
 
@@ -57,8 +59,6 @@ class Menu(aBasket: Basket, offersList: List[Offer]) {
         println("Total price: " + PricePrinter.formatPrice(totalPrice))
       } else if (id <= maxID)
         basket.add(id)
-      else
-        println(wrongMenuMsg)
     }
   }
 
