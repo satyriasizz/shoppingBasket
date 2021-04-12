@@ -13,6 +13,8 @@ To build and run the project use:
  sbt run
 ```
 
+Using
+--------
 You'll get project menu where you can add products to the basket.
 Press 0 to calculate total price and see the special offers if they are available.
 Current special offers:
