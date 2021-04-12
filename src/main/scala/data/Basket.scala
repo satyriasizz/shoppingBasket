@@ -13,7 +13,11 @@ class Basket {
       basket(id) = 1
   }
 
-  def getItemsSubtotal: Double = basket.map(item => Goods.getGoodByID(item._1).price * item._2).sum
+  def getItemsSubtotal: Double = basket.map(item =>
+    Goods.getGoodByID(item._1) match {
+      case Some(sellable) => sellable.price * item._2
+      case None => 0
+    }).sum
 
   def apply(id: Int): (Int, Int) = id -> basket.getOrElse(id, 0)
 }

@@ -14,5 +14,5 @@ object Goods {
 
   def getMaxID: Int = goods.keys.max
 
-  def getGoodByID(id: Int): Sellable = goods(id)
+  def getGoodByID(id: Int): Option[Sellable] = goods.get(id)
 }
