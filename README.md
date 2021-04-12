@@ -1,4 +1,4 @@
-# shoppingBasket
+# Shopping Basket
 
 Building
 --------
